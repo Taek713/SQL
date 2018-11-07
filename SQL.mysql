@@ -1,0 +1,46 @@
+	SELECT * FROM customers;
+
+	SELECT DISTINCT Country FROM customers;
+
+	SELECT * FROM customers
+	WHERE CustomerID Like 'BL%';
+	
+	SELECT * FROM orders
+	limit 100;
+	
+	SELECT * FROM customers
+	WHERE 
+	  (PostalCode = 1010) OR 
+	  (PostalCode = 3012) OR 
+	  (PostalCode = 12209) OR
+	  (PostalCode = 05023);
+	  
+	SELECT * FROM northwind.orders
+	WHERE ShipRegion like '%';
+
+	SELECT * FROM northwind.customers
+	Order By Country, City;
+	
+	Insert into customers (customerId,companyname,contactname,contacttitle,address,city,
+			region,postalcode,country,phone,fax,Image,ImageThumbnail) 
+			values('ABC','abcltd','abc',
+			'sales','3543kkjvfdv','detroit','null',1011,'usa',(1) 135-5333,(1) 135-5535,'null');
+			
+	Update orders  set shipRegion='EuroZone' where shipCountry='France';
+			
+	delete from `order details` where quantity=1;
+			
+	select max(Quantity) as 'max',min(Quantity) as 'min', avg(Quantity) as 'average' from `order details`;
+			
+	select max(Quantity) as 'max',min(Quantity) as 'min', avg(Quantity) as 'average' from `order details` order by orderid;
+			
+	select customerID from orders where orderID=10290;
+
+			
+	select * from orders inner join customers;
+	select * from orders left  join customers on orders.customerId= customers.CustomerID;
+	select * from orders right  join customers on orders.customerId= customers.CustomerID;
+			
+	select firstname from employees where ReportsTo='null';
+			
+	select firstname from employees where ReportsTo='Andrew';
