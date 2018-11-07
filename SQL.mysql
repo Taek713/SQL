@@ -1,3 +1,5 @@
+	//If its not together, then its a space apart
+	
 	SELECT * FROM customers;
 
 	SELECT DISTINCT Country FROM customers;
